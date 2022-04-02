@@ -4,7 +4,10 @@ import java.util.Optional;
 
 public class ShapeUtil {
     public static void printShapes(Shape[] shapes){
-        System.out.println(Arrays.toString(shapes));
+        String[] result = Arrays.stream(shapes)
+                .map(s->s.toString() + String.format(": %.3f", s.getArea()))
+                .toArray(String[]::new);
+        System.out.println(Arrays.toString(result));
     }
 
     public static void sort(Shape[] shapes){
