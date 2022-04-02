@@ -1,12 +1,16 @@
 package com.company;
-
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.Optional;
 
 public class ShapeUtil {
     static void sort(Shape[] shapes){
-        Arrays.sort(shapes, Comparator.comparing(Shape::getType));
+        for (int i = 0; i < shapes.length; i++){
+            for(int j = i + 1; j < shapes.length; j++){
+                if(shapes[i].getType().compareTo(shapes[j].getType())>0){
+                    swap(shapes, i, j);
+                }
+            }
+        }
     }
 
     static void printShapes(Shape[] shapes){
@@ -19,5 +23,11 @@ public class ShapeUtil {
         if(foundShape.isEmpty())
             return null;
         return foundShape.get();
+    }
+
+    private static void swap(Shape[] shapes, int i, int j){
+        Shape temp = shapes[i];
+        shapes[i] = shapes[j];
+        shapes[j] = temp;
     }
 }

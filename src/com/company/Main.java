@@ -12,7 +12,6 @@ public class Main {
                 new Rectangle("RandomRectangle2", 3, 4)
         };
         ShapeUtil.sort(shapes);
-        ShapeUtil.printShapes(PaintManager.getPaintedShapes(shapes,30,2));
-
+        ShapeUtil.printShapes(shapes);
     }
 }
