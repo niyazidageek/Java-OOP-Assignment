@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.Optional;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -10,6 +12,7 @@ public class Main {
                 new Rectangle("RandomRectangle2", 3, 4)
         };
         ShapeUtil.sort(shapes);
-        ShapeUtil.printShapes(PaintManager.getPaintedShapes(shapes,69,2));
+        ShapeUtil.printShapes(PaintManager.getPaintedShapes(shapes,30,2));
+
     }
 }
