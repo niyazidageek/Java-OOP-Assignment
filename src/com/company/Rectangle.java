@@ -5,10 +5,11 @@ public class Rectangle extends Shape {
         super(name);
         this.width = width;
         this.height = height;
+        this.type = this.getClass().getSimpleName();
     }
 
-    double width;
-    double height;
+    private double width;
+    private double height;
 
     double getWidth(){
         return width;

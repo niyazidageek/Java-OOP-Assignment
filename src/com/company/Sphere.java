@@ -4,9 +4,10 @@ public class Sphere extends Shape{
     Sphere(String name, double radius){
         super(name);
         this.radius = radius;
+        this.type = this.getClass().getSimpleName();
     }
 
-    double radius;
+    private double radius;
 
     double getRadius(){
         return radius;
