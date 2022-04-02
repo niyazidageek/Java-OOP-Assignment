@@ -8,7 +8,7 @@ public class Rectangle extends Shape {
         super(name);
         this.width = width;
         this.height = height;
-        super.setType(this.getClass().getSimpleName());
+        super.setType(this.getClass().getSimpleName().toLowerCase());
     }
 
     public double getWidth(){

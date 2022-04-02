@@ -19,7 +19,7 @@ public class ShapeUtil {
 
     public static Shape findShapeByName(Shape[] shapes, String name){
         Optional<Shape> foundShape = Arrays.stream(shapes)
-                .filter(s->s.getName() == name).findFirst();
+                .filter(s->s.getName().equals(name)).findFirst();
         if(foundShape.isEmpty())
             return null;
         return foundShape.get();

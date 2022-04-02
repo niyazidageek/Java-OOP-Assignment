@@ -6,7 +6,7 @@ public class Sphere extends Shape{
     public Sphere(String name, double radius){
         super(name);
         this.radius = radius;
-        this.setType(this.getClass().getSimpleName());
+        this.setType(this.getClass().getSimpleName().toLowerCase());
     }
 
     public double getRadius(){
