@@ -1,38 +1,31 @@
 package com.company;
 
 public class Rectangle extends Shape {
-    Rectangle(String name, double width, double height){
-        super(name);
-        this.width = width;
-        this.height = height;
-        this.type = this.getClass().getSimpleName();
-    }
-
     private double width;
     private double height;
 
-    double getWidth(){
+    public Rectangle(String name, double width, double height){
+        super(name);
+        this.width = width;
+        this.height = height;
+        super.setType(this.getClass().getSimpleName());
+    }
+
+    public double getWidth(){
         return width;
     }
 
-    double getHeight(){
+    public double getHeight(){
         return height;
     }
 
-    void setWidth(double width){
-        this.width = width;
-    }
-
-    void setHeight(double height){
-        this.height = height;
-    }
-
+    @Override
     public double getArea() {
         return width*height;
     }
 
     @Override
     public String toString(){
-        return String.format("%s: %s - [%.2f,%.2f]", type, name, width, height);
+        return String.format("%s: %s - [%.2f,%.2f]", super.getType(), super.getName(), width, height);
     }
 }

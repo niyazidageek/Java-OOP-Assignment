@@ -1,26 +1,26 @@
 package com.company;
 
 public abstract class Shape implements Measurable {
-    Shape(String name){
+    private String name;
+    private String type;
+
+    public Shape(String name){
         this.name=name;
     }
 
-    String type;
-    String name;
-
-    String getName(){
+    public String getName(){
         return name;
     }
 
-    String getType(){
+    public String getType(){
         return type;
     }
 
-    void setName(String name){
+    public void setName(String name){
         this.name = name;
     }
 
-    void setType(String type){
+    public void setType(String type){
         this.type = type;
     }
 

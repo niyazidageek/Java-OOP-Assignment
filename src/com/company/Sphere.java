@@ -1,20 +1,16 @@
 package com.company;
 
 public class Sphere extends Shape{
-    Sphere(String name, double radius){
-        super(name);
-        this.radius = radius;
-        this.type = this.getClass().getSimpleName();
-    }
-
     private double radius;
 
-    double getRadius(){
-        return radius;
+    public Sphere(String name, double radius){
+        super(name);
+        this.radius = radius;
+        this.setType(this.getClass().getSimpleName());
     }
 
-    void setRadius(double radius){
-        this.radius = radius;
+    public double getRadius(){
+        return radius;
     }
 
     @Override
@@ -24,6 +20,6 @@ public class Sphere extends Shape{
 
     @Override
     public String toString(){
-        return String.format("%s: %s - [%.2f]", type, name, radius);
+        return String.format("%s: %s - [%.2f]", this.getType(), this.getName(), radius);
     }
 }

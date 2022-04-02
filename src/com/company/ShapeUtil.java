@@ -3,7 +3,11 @@ import java.util.Arrays;
 import java.util.Optional;
 
 public class ShapeUtil {
-    static void sort(Shape[] shapes){
+    public static void printShapes(Shape[] shapes){
+        System.out.println(Arrays.toString(shapes));
+    }
+
+    public static void sort(Shape[] shapes){
         for (int i = 0; i < shapes.length; i++){
             for(int j = i + 1; j < shapes.length; j++){
                 if(shapes[i].getType().compareTo(shapes[j].getType())>0){
@@ -13,11 +17,7 @@ public class ShapeUtil {
         }
     }
 
-    static void printShapes(Shape[] shapes){
-        System.out.println(Arrays.toString(shapes));
-    }
-
-    static Shape findShapeByName(Shape[] shapes, String name){
+    public static Shape findShapeByName(Shape[] shapes, String name){
         Optional<Shape> foundShape = Arrays.stream(shapes)
                 .filter(s->s.getName() == name).findFirst();
         if(foundShape.isEmpty())
